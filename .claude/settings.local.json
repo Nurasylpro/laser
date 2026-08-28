@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\\\Users\\\\nuamy\\\\Desktop\\\\dauren\" /s /b)",
+      "Bash(findstr /i \".ino\")",
+      "Bash(python -m py_compile scripts/weed_zap.py)"
+    ]
+  }
+}

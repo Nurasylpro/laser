@@ -1,0 +1,19 @@
+# WeedZap dependencies
+# Install on Raspberry Pi:
+#   pip install -r requirements.txt
+#
+# On Pi, use opencv-python-headless (no GUI needed):
+#   pip install opencv-python-headless
+# On Windows/desktop (with GUI preview):
+#   pip install opencv-python
+
+ultralytics
+pyserial
+numpy
+
+# Pick ONE of these depending on your setup:
+# opencv-python          # Windows / desktop with display
+# opencv-python-headless # Raspberry Pi headless (SSH only)
+
+# For faster YOLO inference on Pi (after running export_model.py):
+# onnxruntime            # for .onnx model
