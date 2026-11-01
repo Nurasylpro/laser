@@ -48,9 +48,31 @@ For our smart greenhouse, we wanted the laser to work together with a mechanical
 |---|---|
 | ![CAD model of the universal tool mount](docs/story/tool-mount-cad.png) | ![The 3D-printed tool mount parts](docs/story/tool-mount-printed.webp) |
 
-### 5. Today: the gantry
+### 5. Teaching the robot to see weeds
+
+A laser is useless if it doesn't know where to shoot, so we put a lot of work into computer vision. I collected many weeds myself, planted them in boxes, measured them and photographed them again and again. From those photos I built our own dataset, labelled it and trained **YOLO** models to find each weed and the exact point to hit.
+
+| Growing and measuring weeds for the dataset | |
+|---|---|
+| ![Weeds planted in a box, measured with a ruler](docs/story/weeds-measured-1.jpg) | ![Another set of weeds measured for the dataset](docs/story/weeds-measured-2.jpg) |
+
+| What the trained model sees | Detection from the gantry camera |
+|---|---|
+| ![Weed pose model detections with confidence scores](docs/images/weed-pose-model.jpg) | ![Detected weeds from the gantry camera](docs/images/gantry-detection.jpg) |
+
+### 6. Path planning between weeds
+
+Once every weed is found, the robot plans the shortest route between them, so the laser visits each weed once without wasting time.
+
+<p align="center"><img src="docs/images/path-planning.jpg" width="100%" alt="Planned path between detected weeds"></p>
+
+### 7. Today: the gantry
 
 Everything came together in the current system: a gantry over the growing bed, a camera, the YOLO model, the NUBM44 laser and the tool mount. The rest of this README describes how it works.
+
+| Zapping a weed in the soil bed | Testing late at night |
+|---|---|
+| ![The gantry firing the laser at a weed in the soil bed](docs/story/gantry-zapping-weed.webp) | ![The gantry running a laser test at night](docs/story/gantry-night-test.jpg) |
 
 👉 For the final version of each part, watch the videos on [YouTube](https://youtu.be/jQHW0xfkkLQ?si=JcptZxX9xMJJeqWb) and [Instagram](https://www.instagram.com/w_eedzap?stkn=MWl5ODRhbG5hM2NrYg%3D%3D&utm_source=qr).
 
@@ -71,13 +93,7 @@ Everything came together in the current system: a gantry over the growing bed, a
 
 ## Results (current gantry)
 
-| YOLO weed detection | Gantry camera, model test |
-|---|---|
-| ![Weed pose model detections with confidence scores](docs/images/weed-pose-model.jpg) | ![Detected weeds from the gantry camera](docs/images/gantry-detection.jpg) |
-
-| Path planning between weeds | Calibration fit residuals |
-|---|---|
-| ![Planned path between detected weeds on the bench](docs/images/path-planning.jpg) | ![Polynomial fit residuals at each calibration height](docs/images/calibration-residuals.png) |
+![Polynomial fit residuals at each calibration height](docs/images/calibration-residuals.png)
 
 ![Bench test of the model on printed weeds](docs/images/bench-test.jpg)
 
