@@ -16,7 +16,9 @@ Before any robot, we had a simple question: can light kill a weed? We took a las
 |---|---|
 | ![Pointing a hand-held laser at a weed in the garden](docs/story/hand-laser-test.webp) | ![The treated weed the next day, with damaged stems](docs/story/weed-next-day.webp) |
 
-🎥 [Video of that first test](docs/story/first-hand-laser-test.mp4)
+<a href="docs/story/first-hand-laser-test.mp4"><img src="docs/story/first-hand-laser-test.gif" width="260" alt="Video of the first hand-held laser test"></a>
+
+🎥 [Watch the full video with sound](docs/story/first-hand-laser-test.mp4)
 
 The next day, the weed showed the answer. The laser had destroyed its **phloem and xylem**, the channels that carry water and nutrients between the root and the leaves. Without them, the plant can't feed its upper part, so it dies. We don't need to burn the whole weed. One precise shot in the right place is enough. That became the core idea of WeedZap.
 
